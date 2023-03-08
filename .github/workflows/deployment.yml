@@ -1,6 +1,6 @@
 name: Deploy Project
 #execute job on push event
-on: push
+on: [push, workflow_dispatch]
 jobs:
   test:
     #runs on environment ubuntu-latest
