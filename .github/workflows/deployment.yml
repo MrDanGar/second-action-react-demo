@@ -1,4 +1,4 @@
-name: Test Project
+name: Deploy Project
 #execute job on push event
 on: push
 jobs:
