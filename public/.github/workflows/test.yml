@@ -1,0 +1,24 @@
+name: Test Project
+#execute job on push event
+on: push
+jobs:
+  test:
+    #runs on environment ubuntu-latest
+    runs-on: ubuntu-latest
+    steps:
+      #checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+      #install nodejs on environment
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        #use and set a prameter of this action
+        #in this case specify that nodejs version 18 is installed
+        with:
+          node-version: 18
+      #install dependencies
+      - name: Install dependencies
+        run: npm ci
+      #run tests
+      - name: Run Tests
+        run: npm test
